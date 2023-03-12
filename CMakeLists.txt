@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.24)
-project(EasyGraphicsEngine LANGUAGES CXX C VERSION 0.1)
+project(EasyGraphicsLib LANGUAGES CXX C VERSION 0.1)
 
 
 if (NOT CMAKE_BUILD_TYPE)
@@ -35,7 +35,7 @@ include_directories(${GLFW_DIR}/deps)
 
 file(GLOB sources *.cpp)
 
-add_executable(EasyGraphicsEngine ${sources}
+add_executable(EasyGraphicsLib ${sources}
         ${IMGUI_DIR}/backends/imgui_impl_glfw.cpp
         ${IMGUI_DIR}/backends/imgui_impl_vulkan.cpp
         ${IMGUI_DIR}/imgui.cpp
@@ -43,5 +43,5 @@ add_executable(EasyGraphicsEngine ${sources}
         ${IMGUI_DIR}/imgui_tables.cpp
         ${IMGUI_DIR}/imgui_widgets.cpp)
 
-target_link_libraries(EasyGraphicsEngine ${LIBRARIES})
-target_compile_definitions(EasyGraphicsEngine PUBLIC -DImTextureID=ImU64)
+target_link_libraries(EasyGraphicsLib ${LIBRARIES})
+target_compile_definitions(EasyGraphicsLib PUBLIC -DImTextureID=ImU64)
